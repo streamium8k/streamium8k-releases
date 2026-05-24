@@ -379,6 +379,43 @@
 
         /* ── Smooth scroll ── */
         html { scroll-behavior: smooth; }
+         /* ✅ NEW: Logo styles */
+    .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .header-logo {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+
+    .logo-text {
+        font-size: 22px;
+        font-weight: 900;
+        background: linear-gradient(90deg, var(--cyan), var(--orange));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: 2px;
+    }
+
+    .hero-logo {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        margin: 0 auto 24px;
+        display: block;
+        filter: drop-shadow(0 0 30px rgba(0, 229, 255, 0.4));
+        animation: logo-glow 3s ease-in-out infinite;
+    }
+
+    @keyframes logo-glow {
+        0%, 100% { filter: drop-shadow(0 0 30px rgba(0, 229, 255, 0.4)); }
+        50% { filter: drop-shadow(0 0 50px rgba(0, 229, 255, 0.7)); }
+    }
     </style>
 </head>
 <body>
