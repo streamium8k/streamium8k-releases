@@ -685,11 +685,11 @@
             <span data-lang="en" class="active-lang">Contact us for subscription details and support.</span>
             <span data-lang="fr">Contactez-nous pour les détails d'abonnement et le support.</span>
             <span data-lang="ar">تواصل معنا باش تعرف تفاصيل الاشتراك والدعم.</span>
-        <a id="whatsappContactBtn"
-   href="#"
+       <a id="whatsappContactBtn"
+   href="https://wa.me/212712737625"
    class="whatsapp-cta"
    target="_blank"
-   onclick="return openWhatsAppContact()">
+   onclick="openWhatsAppContact(event)">
     💬
     <span data-lang="en" class="active-lang">Contact us</span>
     <span data-lang="fr">Contactez-nous</span>
@@ -741,16 +741,20 @@
                 document.documentElement.setAttribute('lang', lang);
                 document.documentElement.setAttribute('dir', 'ltr');
             }
-            // ✅ NEW: Open WhatsApp with message in current language
-        function openWhatsAppContact() {
-        const lang = localStorage.getItem('s8k-lang') ||
+            
+            // ✅ Open WhatsApp with message in current language
+function openWhatsAppContact(event) {
+    // Prevent default link behavior
+    if (event) event.preventDefault();
+
+    // Detect current language
+    const lang = localStorage.getItem('s8k-lang') ||
                  (['en','fr','ar'].includes(navigator.language.split('-')[0])
                     ? navigator.language.split('-')[0] : 'en');
 
-            let message = '';
-
-               switch(lang) {
-                case 'fr':
+    let message = '';
+    switch(lang) {
+        case 'fr':
             message = "Bonjour Streamium 8K ! Je suis intéressé par un abonnement.";
             break;
         case 'ar':
@@ -761,7 +765,10 @@
     }
 
     const url = `https://wa.me/212712737625?text=${encodeURIComponent(message)}`;
+
+    // Open in new tab/window
     window.open(url, '_blank');
+
     return false;
     }
 }
