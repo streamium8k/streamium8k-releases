@@ -45,7 +45,6 @@
             50% { opacity: 0.7; }
         }
 
-        /* ── Header ── */
         header {
             display: flex;
             justify-content: space-between;
@@ -61,7 +60,6 @@
             gap: 16px;
         }
 
-        /* Logo container (header logo + brand text) */
         .logo-container {
             display: flex;
             align-items: center;
@@ -120,7 +118,6 @@
 
         .lang-btn:not(.active):hover { color: var(--cyan); }
 
-        /* ── Hero ── */
         .hero {
             text-align: center;
             padding: 60px 24px 60px;
@@ -176,7 +173,6 @@
             margin-right: auto;
         }
 
-        /* ── Download Buttons ── */
         .download-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -231,7 +227,6 @@
             opacity: 0.8;
         }
 
-        /* ── WhatsApp Button ── */
         .whatsapp-cta {
             display: inline-flex;
             align-items: center;
@@ -246,6 +241,7 @@
             box-shadow: 0 8px 32px rgba(37,211,102,0.4);
             transition: all 0.3s;
             margin-top: 16px;
+            cursor: pointer;
         }
 
         .whatsapp-cta:hover {
@@ -253,7 +249,6 @@
             box-shadow: 0 12px 40px rgba(37,211,102,0.6);
         }
 
-        /* ── Features Section ── */
         section { padding: 80px 24px; }
 
         .section-title {
@@ -308,7 +303,6 @@
             color: var(--text-muted);
         }
 
-        /* ── Install Steps ── */
         .install-section {
             background: linear-gradient(180deg, transparent, rgba(0,229,255,0.05));
         }
@@ -351,7 +345,6 @@
             color: var(--text-muted);
         }
 
-        /* ── Contact / CTA Section ── */
         .contact-section {
             text-align: center;
             background: radial-gradient(circle at center, rgba(168,85,247,0.15), transparent 70%);
@@ -373,7 +366,6 @@
             margin-right: auto;
         }
 
-        /* ── Footer ── */
         footer {
             border-top: 1px solid rgba(0,229,255,0.2);
             padding: 32px 24px;
@@ -399,52 +391,48 @@
 
         .footer-content a:hover { opacity: 0.7; }
 
-        /* ── RTL Support for Arabic ── */
         body.rtl { direction: rtl; }
         body.rtl .lang-switcher { direction: ltr; }
 
-        /* ── Language Content Hiding ── */
         [data-lang]:not(.active-lang) { display: none; }
 
-        /* ── Smooth scroll ── */
         html { scroll-behavior: smooth; }
 
-        /* ── Mobile Responsive ── */
-       @media (max-width: 480px) {
-    header {
-        padding: 12px 14px;
-        gap: 6px;
-    }
-    .logo-container {
-        flex: 1;
-        min-width: 0;
-    }
-    .logo-text {
-        font-size: 14px;
-        letter-spacing: 1px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .header-logo {
-        width: 44px !important;
-        height: 44px !important;
-        display: block !important;
-        flex-shrink: 0;
-    }
-    .lang-switcher {
-        padding: 3px;
-    }
-    .lang-btn {
-        padding: 5px 10px;
-        font-size: 11px;
-    }
-}
-        /* ✅ Force logo to ALWAYS show, no matter what */
-.header-logo {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
+        @media (max-width: 480px) {
+            header {
+                padding: 12px 14px;
+                gap: 6px;
+            }
+            .logo-container {
+                flex: 1;
+                min-width: 0;
+            }
+            .logo-text {
+                font-size: 14px;
+                letter-spacing: 1px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .header-logo {
+                width: 44px !important;
+                height: 44px !important;
+                display: block !important;
+                flex-shrink: 0;
+            }
+            .lang-switcher {
+                padding: 3px;
+            }
+            .lang-btn {
+                padding: 5px 10px;
+                font-size: 11px;
+            }
+        }
+
+        .header-logo {
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
     </style>
 </head>
 <body>
@@ -466,12 +454,10 @@
 
     <!-- ═══════════════ HERO ═══════════════ -->
     <section class="hero">
-        <!-- Hero Logo (big, glowing) -->
         <img src="https://raw.githubusercontent.com/streamium8k/streamium8k-releases/main/logo_s8k.png"
              alt="Streamium 8K"
              class="hero-logo">
 
-        <!-- English -->
         <div data-lang="en" class="active-lang">
             <span class="hero-eyebrow">✨ PREMIUM IPTV</span>
             <h1>Stream Everything in 8K HDR</h1>
@@ -685,16 +671,17 @@
             <span data-lang="en" class="active-lang">Contact us for subscription details and support.</span>
             <span data-lang="fr">Contactez-nous pour les détails d'abonnement et le support.</span>
             <span data-lang="ar">تواصل معنا باش تعرف تفاصيل الاشتراك والدعم.</span>
-       <a id="whatsappContactBtn"
-   href="https://wa.me/212712737625"
-   class="whatsapp-cta"
-   target="_blank"
-   onclick="openWhatsAppContact(event)">
-    💬
-    <span data-lang="en" class="active-lang">Contact us</span>
-    <span data-lang="fr">Contactez-nous</span>
-    <span data-lang="ar">تواصل معنا</span>
-</a>
+        </p>
+        <a id="whatsappContactBtn"
+           href="https://wa.me/212712737625"
+           class="whatsapp-cta"
+           target="_blank"
+           onclick="openWhatsAppContact(event)">
+            💬
+            <span data-lang="en" class="active-lang">Contact us</span>
+            <span data-lang="fr">Contactez-nous</span>
+            <span data-lang="ar">تواصل معنا</span>
+        </a>
     </section>
 
     <!-- ═══════════════ FOOTER ═══════════════ -->
@@ -741,37 +728,33 @@
                 document.documentElement.setAttribute('lang', lang);
                 document.documentElement.setAttribute('dir', 'ltr');
             }
-            
-            // ✅ Open WhatsApp with message in current language
-function openWhatsAppContact(event) {
-    // Prevent default link behavior
-    if (event) event.preventDefault();
+        }
 
-    // Detect current language
-    const lang = localStorage.getItem('s8k-lang') ||
-                 (['en','fr','ar'].includes(navigator.language.split('-')[0])
-                    ? navigator.language.split('-')[0] : 'en');
+        // ✅ Open WhatsApp with message in current language
+        function openWhatsAppContact(event) {
+            if (event) event.preventDefault();
 
-    let message = '';
-    switch(lang) {
-        case 'fr':
-            message = "Bonjour Streamium 8K ! Je suis intéressé par un abonnement.";
-            break;
-        case 'ar':
-            message = "السلام عليكم Streamium 8K! بغيت نشري اشتراك.";
-            break;
-        default: // 'en'
-            message = "Hi Streamium 8K! I'm interested in getting a subscription.";
-    }
+            const lang = localStorage.getItem('s8k-lang') ||
+                         (['en','fr','ar'].includes(navigator.language.split('-')[0])
+                            ? navigator.language.split('-')[0] : 'en');
 
-    const url = `https://wa.me/212712737625?text=${encodeURIComponent(message)}`;
+            let message = '';
+            switch(lang) {
+                case 'fr':
+                    message = "Bonjour Streamium 8K ! Je suis intéressé par un abonnement.";
+                    break;
+                case 'ar':
+                    message = "السلام عليكم Streamium 8K! بغيت نشري اشتراك.";
+                    break;
+                default:
+                    message = "Hi Streamium 8K! I'm interested in getting a subscription.";
+            }
 
-    // Open in new tab/window
-    window.open(url, '_blank');
+            const url = `https://wa.me/212712737625?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
 
-    return false;
-    }
-}
+            return false;
+        }
     </script>
 </body>
 </html>
